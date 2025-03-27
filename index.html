@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เค้ามีอะไรจะบอกบี๋บี๋ 💖</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #ffe4e1;
+            color: #d63384;
+            margin: 50px;
+        }
+        h1 {
+            font-size: 2.5rem;
+        }
+        img {
+            border-radius: 20px;
+            margin: 20px 0;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            transition: opacity 1s ease-in-out;
+            max-width: 100%; /* ทำให้ขนาดรูปไม่เกินขนาดของพื้นที่ */
+            height: auto;   /* ให้ความสูงของรูปตามสัดส่วน */
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 10px;
+            background-color: #ff69b4;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #ff1493;
+        }
+
+        /* Media Query สำหรับขนาดหน้าจอ iPhone 11 ขึ้นไป */
+        @media (max-width: 828px) {
+            img {
+                max-width: 90%; /* ให้รูปย่อขนาดไม่เกิน 90% ของหน้าจอ */
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>💖 เค้ามีอะไรจะบอกบี๋บี๋ 💖</h1>
+    
+    <!-- รูปภาพที่เปลี่ยนเอง -->
+    <img id="loveImage" src="images/l.jpg" alt="รูปหวานๆ">
+
+    <br>
+    <button onclick="window.location.href='next.html'">Next ➡️</button>
+
+    <script>
+        // รายการรูปภาพที่ต้องการให้เปลี่ยน
+        const images = [
+            "images/l.jpg", 
+            "images/l1.jpg", 
+            "images/l2.jpg", 
+            "images/l3.jpg"
+        ];
+        let index = 0; // เริ่มต้นที่รูปแรก
+
+        // ฟังก์ชันเปลี่ยนรูปภาพ
+        function changeImage() {
+            index = (index + 1) % images.length; // เปลี่ยนรูปวนไป
+            document.getElementById("loveImage").src = images[index];
+        }
+
+        // เปลี่ยนรูปทุก 3 วินาที
+        setInterval(changeImage, 3000);
+    </script>
+
+</body>
+</html>
